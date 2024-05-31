@@ -17,5 +17,5 @@ services:
       - "1080:1080"
     restart: always
     environment:
-      - SOCKS5_USER=${PROXY_PASSWORDj}
-      - SOCKS5_PASSWORD=${PROXY_PASSWORD}
+      - PROXY_USER=${SOCKS5_USER}
+      - PROXY_PASSWORD=${SOCKS5_PASSWORD}

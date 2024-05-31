@@ -16,7 +16,7 @@ fi
 
 # Generate the OpenVPN server configuration
 echo -e "${INFO} ${YELLOW}Generating OpenVPN server configuration...${NC}"
-docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://$SERVERNAME
+docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://$OVPN_SERVER_NAME
 if [ $? -eq 0 ]; then
   echo -e "${CHECK_MARK} ${GREEN}OpenVPN server configuration generated successfully.${NC}"
 else

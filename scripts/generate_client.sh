@@ -12,7 +12,7 @@ if [ -z "$CLIENTNAME" ]; then
 fi
 
 # Ensure the output directory exists
-mkdir -p $CLIENT_CONFIG_DIR
+mkdir -p $OVPN_CLIENTS_DIR
 
 echo -e "${INFO} ${YELLOW}Generating client certificate for $CLIENTNAME...${NC}"
 docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full $CLIENTNAME nopass
@@ -25,9 +25,9 @@ fi
 
 # Retrieve the client configuration
 echo -e "${INFO} ${YELLOW}Retrieving the client configuration for $CLIENTNAME...${NC}"
-docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient $CLIENTNAME > $CLIENT_CONFIG_DIR/$CLIENTNAME.ovpn
+docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient $CLIENTNAME > $OVPN_CLIENTS_DIR/$CLIENTNAME.ovpn
 if [ $? -eq 0 ]; then
-  echo -e "${CHECK_MARK} ${GREEN}Client configuration file for $CLIENTNAME has been saved as $CLIENT_CONFIG_DIR/$CLIENTNAME.ovpn.${NC}"
+  echo -e "${CHECK_MARK} ${GREEN}Client configuration file for $CLIENTNAME has been saved as $OVPN_CLIENTS_DIR/$CLIENTNAME.ovpn.${NC}"
 else
   echo -e "${CROSS_MARK} ${RED}Failed to retrieve client configuration for $CLIENTNAME.${NC}"
   exit 1
