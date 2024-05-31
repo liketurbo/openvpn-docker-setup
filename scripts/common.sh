@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Load environment variables
 source ./.env
 
 # Colors
@@ -13,6 +12,9 @@ NC='\033[0m' # No Color
 CHECK_MARK="\xE2\x9C\x94"
 CROSS_MARK="\xE2\x9D\x8C"
 INFO="\xE2\x84\xB9"
+
+# Variables
+OVPN_DATA=ovpn-data
 
 # Check if all required environment variables are set
 function check_env_variables {

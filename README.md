@@ -4,7 +4,7 @@ This repository provides scripts to automate the setup and management of an Open
 
 ## Prerequisites
 
-Ensure you have Docker installed on your machine. You can download the relevant installer from [here](https://www.docker.com/get-started/).
+Ensure you have [Docker](https://www.docker.com/get-started/) installed on your machine.
 
 ## Getting Started
 
@@ -29,11 +29,10 @@ Ensure you have Docker installed on your machine. You can download the relevant 
    Example with filled variables:
 
    ```bash
-   OVPN_DATA=ovpn-data-example
-   OVPN_CLIENTS_DIR=client-certs
-   OVPN_SERVER_NAME=10.10.10.10
-   SOCKS5_USER=your_user
-   SOCKS5_PASSWORD=your_pass
+   OVPN_CLIENTS_DIR=certs
+   OVPN_SERVER_NAME=10.10.10.10 # or helloworld.com
+   SOCKS5_USER=dijedodol
+   SOCKS5_PASSWORD=test
    ```
 
 4. Run the setup script to initialize OpenVPN:
