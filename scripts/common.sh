@@ -26,7 +26,7 @@ function check_env_variables {
       echo -e "${CROSS_MARK} ${RED}Error: $var_name is not set.${NC}"
       missing=1
     fi
-  done < ./env.example
+  done < ./.env.example
 
   if [ $missing -eq 1 ]; then
     echo -e "${INFO} ${YELLOW}Please make sure to set all required environment variables in the .env file.${NC}"
