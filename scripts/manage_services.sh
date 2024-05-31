@@ -2,11 +2,9 @@
 
 source ./scripts/common.sh
 
-COMPOSE_FILE="../docker-compose.yml"
-
 function start_services {
   echo -e "${INFO} ${YELLOW}Starting OpenVPN and SOCKS5 services...${NC}"
-  docker-compose -f $COMPOSE_FILE up -d
+  docker compose up -d
   if [ $? -eq 0 ]; then
     echo -e "${CHECK_MARK} ${GREEN}Services started successfully.${NC}"
   else
@@ -17,7 +15,7 @@ function start_services {
 
 function stop_services {
   echo -e "${INFO} ${YELLOW}Stopping OpenVPN and SOCKS5 services...${NC}"
-  docker-compose -f $COMPOSE_FILE down
+  docker compose down
   if [ $? -eq 0 ]; then
     echo -e "${CHECK_MARK} ${GREEN}Services stopped successfully.${NC}"
   else
