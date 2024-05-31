@@ -1,0 +1,21 @@
+services:
+  openvpn:
+    image: kylemanna/openvpn
+    container_name: openvpn
+    ports:
+      - "1194:1194/udp"
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./openvpn-data/conf:/etc/openvpn
+
+  socks5:
+    image: serjs/go-socks5-proxy
+    container_name: socks5
+    ports:
+      - "1080:1080"
+    restart: always
+    environment:
+      - SOCKS5_USER=${PROXY_PASSWORDj}
+      - SOCKS5_PASSWORD=${PROXY_PASSWORD}
