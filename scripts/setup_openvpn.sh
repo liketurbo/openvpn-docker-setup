@@ -6,7 +6,7 @@ echo -e "${INFO} ${YELLOW}Welcome to the OpenVPN setup script.${NC}"
 
 # Create the Docker volume for OpenVPN
 echo -e "${INFO} ${YELLOW}Creating Docker volume: $OVPN_DATA...${NC}"
-docker volume create --name $OVPN_DATA
+docker volume create $OVPN_DATA
 if [ $? -eq 0 ]; then
   echo -e "${CHECK_MARK} ${GREEN}Docker volume $OVPN_DATA created successfully.${NC}"
 else
