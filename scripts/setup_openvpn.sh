@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $(dirname "$0")/common.sh
+source ./scripts/common.sh
 
 echo -e "${INFO} ${YELLOW}Welcome to the OpenVPN setup script.${NC}"
 

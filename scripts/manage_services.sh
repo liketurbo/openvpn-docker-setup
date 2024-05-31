@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $(dirname "$0")/common.sh
+source ./scripts/common.sh
 
 COMPOSE_FILE="../docker-compose.yml"
 
