@@ -30,7 +30,7 @@ Ensure you have [Docker](https://www.docker.com/get-started/) installed on your 
 
    ```bash
    OVPN_CLIENTS_DIR=certs
-   OVPN_SERVER_NAME=10.10.10.10 # or helloworld.com
+   OVPN_SERVER_NAME=192.168.43.56 # or mydomain.com
    SOCKS5_USER=dijedodol
    SOCKS5_PASSWORD=test
    ```

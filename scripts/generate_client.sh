@@ -11,7 +11,6 @@ if [ -z "$CLIENTNAME" ]; then
   CLIENTNAME="client1"
 fi
 
-# Ensure the output directory exists
 mkdir -p $OVPN_CLIENTS_DIR
 
 echo -e "${INFO} ${YELLOW}Generating client certificate for $CLIENTNAME...${NC}"
